@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/ring_item_width"
+    android:layout_height="@dimen/ring_item_height"
+    android:textColor="@color/text_color"
+    android:background="@color/back"
+    android:layout_margin="@dimen/ring_item_margin"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/ring_item_margin"
+    android:drawableLeft="@drawable/play_cut">
+
+</TextView>

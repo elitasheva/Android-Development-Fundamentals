@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="player_first">You go first!</string>
+    <string name="turn_player">Your turn!</string>
+    <string name="turn_computer">Android\'s turn!</string>
+    <string name="result_tie">It is a tie!</string>
+    <string name="result_player_win">You won!</string>
+    <string name="result_android_win">Android won!</string>
+    <string name="player">Player: </string>
+    <string name="computer">Android: </string>
+    <string name="tie">Tie: </string>
+    <string name="info">Info: </string>
+    <string name="points">points </string>
+    <string name="new_game">New Game</string>
+    <string name="exit_game">Exit Game</string>
+</resources>

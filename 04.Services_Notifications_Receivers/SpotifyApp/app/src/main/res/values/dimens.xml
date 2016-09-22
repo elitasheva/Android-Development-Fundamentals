@@ -1,0 +1,22 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="layout_width">400dp</dimen>
+    <dimen name="layout_height">70dp</dimen>
+    <dimen name="explicit_form_width">50dp</dimen>
+    <dimen name="icons_height">15dp</dimen>
+    <dimen name="left_margin">10dp</dimen>
+    <dimen name="medium_text_size">17sp</dimen>
+
+    <dimen name="recycler_padding">10dp</dimen>
+    <dimen name="recycler_text_margin">5dp</dimen>
+    <dimen name="download_width">15dp</dimen>
+    <dimen name="download_height">15dp</dimen>
+    <dimen name="buttons_player_margins">20dp</dimen>
+    <dimen name="buttons_player_size">50dp</dimen>
+    <dimen name="songView_text_size">15sp</dimen>
+    <dimen name="songView_margin_start">40sp</dimen>
+
+
+</resources>
