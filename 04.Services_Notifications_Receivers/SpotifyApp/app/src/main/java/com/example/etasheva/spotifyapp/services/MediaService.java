@@ -110,6 +110,12 @@ public class MediaService extends Service {
         }
     }
 
+    public void onStopPlayer(){
+        if (this.mPlayer != null && this.mPlayer.isPlaying()){
+            this.mPlayer.stop();
+        }
+    }
+
 
     private void setupHandler(){
         this.handler.removeCallbacks(sendUpdatesToUI);

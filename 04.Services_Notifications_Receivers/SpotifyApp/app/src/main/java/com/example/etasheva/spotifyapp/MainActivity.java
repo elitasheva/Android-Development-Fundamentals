@@ -39,14 +39,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
         }
     };
 
-    @Override
-    protected void onStop() {
-        if (isServiceBound) {
-            unbindService(connection);
-            isServiceBound = false;
-        }
-        super.onStop();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,23 +84,8 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
         this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mSongFragment).commit();
     }
 
-    @SuppressWarnings("ConstantConditions")
-    private void onBackArrowPressed() {
-        this.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        if (this.mMediaServiceIntent == null) {
-            this.mMediaServiceIntent = new Intent(this, MediaService.class);
-        }
-        if (isServiceBound) {
-            unbindService(connection);
-            isServiceBound = false;
-        }
-        //stopService(this.mMediaServiceIntent);
-        this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mMainFragment).commit();
-    }
-
     @Override
     public void onPlayButtonPressed() {
-        //this.mMediaServiceIntent = new Intent(this, MediaService.class);
         this.mMediaServiceIntent.putExtra("song", this.mCurrentSong.getFileSong());
         this.startService(this.mMediaServiceIntent);
         bindService(this.mMediaServiceIntent, connection, Context.BIND_AUTO_CREATE);
@@ -124,14 +101,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
 
     @Override
     public void onStopButtonPressed() {
-        if (this.mMediaServiceIntent == null) {
-            this.mMediaServiceIntent = new Intent(this, MediaService.class);
+        if (this.mConnectedMediaService != null) {
+            this.mConnectedMediaService.getService().onStopPlayer();
         }
-        if (isServiceBound) {
-            unbindService(connection);
-            isServiceBound = false;
-        }
-        stopService(this.mMediaServiceIntent);
     }
 
     @Override
@@ -150,7 +122,40 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
         onBackArrowPressed();
     }
+
+    @Override
+    protected void onStop() {
+        if (isServiceBound) {
+            unbindService(connection);
+            isServiceBound = false;
+        }
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (this.mMediaServiceIntent == null) {
+            this.mMediaServiceIntent = new Intent(this, MediaService.class);
+        }
+        stopService(this.mMediaServiceIntent);
+
+        super.onDestroy();
+    }
+
+
+    @SuppressWarnings("ConstantConditions")
+    private void onBackArrowPressed() {
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        if (this.mMediaServiceIntent == null) {
+            this.mMediaServiceIntent = new Intent(this, MediaService.class);
+        }
+        if (isServiceBound) {
+            unbindService(connection);
+            isServiceBound = false;
+        }
+        this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mMainFragment).commit();
+    }
+
 }
