@@ -51,24 +51,16 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar custom_toolbar = (Toolbar) this.findViewById(R.id.toolbar);
+        this.setSupportActionBar(custom_toolbar);
+        this.getSupportActionBar().setTitle(R.string.toolbar_title);
+        this.getSupportActionBar().setIcon(R.drawable.tool_main_icon);
 
-//        if (savedInstanceState != null) {
-//            //Restore the fragment's instance
-//            this.mSongFragment = (SongFragment) getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
-//            this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mSongFragment).commit();
-//            this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//
-//        }
-            setContentView(R.layout.activity_main);
-            Toolbar custom_toolbar = (Toolbar) this.findViewById(R.id.toolbar);
-            this.setSupportActionBar(custom_toolbar);
-            this.getSupportActionBar().setTitle(R.string.toolbar_title);
-            this.getSupportActionBar().setIcon(R.drawable.tool_main_icon);
+        this.mMainFragment = new MainFragment();
+        this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mMainFragment).commit();
 
-            this.mMainFragment = new MainFragment();
-            this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mMainFragment).commit();
-
-            this.mMediaServiceIntent = new Intent(this, MediaService.class);
+        this.mMediaServiceIntent = new Intent(this, MediaService.class);
     }
 
 
@@ -81,15 +73,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.menu_refresh:
-//                Toast.makeText(this,"Refresh",Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.menu_print:
-//                Toast.makeText(this,"Print",Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.menu_settings:
-//                Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
-//                break;
             case android.R.id.home:
                 this.onBackArrowPressed();
                 return true;
@@ -115,11 +98,11 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
         if (this.mMediaServiceIntent == null) {
             this.mMediaServiceIntent = new Intent(this, MediaService.class);
         }
-        if (isServiceBound){
+        if (isServiceBound) {
             unbindService(connection);
             isServiceBound = false;
         }
-        stopService(this.mMediaServiceIntent);
+        //stopService(this.mMediaServiceIntent);
         this.getSupportFragmentManager().beginTransaction().replace(R.id.container, this.mMainFragment).commit();
     }
 
@@ -144,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
         if (this.mMediaServiceIntent == null) {
             this.mMediaServiceIntent = new Intent(this, MediaService.class);
         }
-        if (isServiceBound){
+        if (isServiceBound) {
             unbindService(connection);
             isServiceBound = false;
         }
@@ -165,11 +148,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Data
         }
     }
 
-
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        //Save the fragment's instance
-//        getSupportFragmentManager().putFragment(outState, "mContent", this.mSongFragment);
-//        super.onSaveInstanceState(outState);
-//    }
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        onBackArrowPressed();
+    }
 }
