@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FragmentsTaskTwo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_paris">Paris</string>
+    <string name="button_rome">Rome</string>
+    <string name="button_madrid">Madrid</string>
+    <string name="home_page_info">Get an information about the town by clicking on the corresponding button</string>
+</resources>

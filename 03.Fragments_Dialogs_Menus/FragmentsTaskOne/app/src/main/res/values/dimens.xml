@@ -1,0 +1,19 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+    <dimen name="toolbar_height">60dp</dimen>
+    <dimen name="cardView_height">80dp</dimen>
+    <dimen name="cardView_width">150dp</dimen>
+    <dimen name="favorite_button_width">30dp</dimen>
+    <dimen name="favorite_button_height">30dp</dimen>
+    <dimen name="favorite_button_margin_left">3dp</dimen>
+    <dimen name="cardView_text_margin_left">40dp</dimen>
+    <dimen name="article_view_margin">3dp</dimen>
+    <dimen name="text_cardView_margin_right">3dp</dimen>
+    <dimen name="news_layout_width">200dp</dimen>
+    <dimen name="home_page_text_margin">20dp</dimen>
+    <dimen name="home_page_text_size">30sp</dimen>
+    <dimen name="home_page_image_margin">50dp</dimen>
+    <dimen name="home_page_layout_height">350dp</dimen>
+</resources>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="@color/colorLayoutBackground"
+    tools:context="com.example.etasheva.tictactoe.TicTacToeActivity">
+
+
+    <TableRow
+        android:layout_width="@dimen/table_row_width"
+        android:layout_height="@dimen/table_row_height"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:id="@+id/tableRow">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/one" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/two" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/three" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="@dimen/table_row_width"
+        android:layout_height="@dimen/table_row_height"
+        android:layout_below="@+id/tableRow"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:id="@+id/tableRow2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/four" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/five" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/six" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="@dimen/table_row_width"
+        android:layout_height="@dimen/table_row_height"
+        android:layout_below="@+id/tableRow2"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:id="@+id/tableRow3">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:padding="@dimen/button_layout_padding"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/seven" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:padding="@dimen/button_layout_padding"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/eight" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClicked"
+            android:background="@drawable/custom_button"
+            android:layout_margin="@dimen/button_layout_margin"
+            android:padding="@dimen/button_layout_padding"
+            android:textSize="@dimen/text_character"
+            android:id="@+id/nine" />
+    </TableRow>
+
+    <TextView
+        android:layout_width="@dimen/textView_Info_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/info"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="center"
+        android:id="@+id/info"
+        android:layout_below="@+id/tableRow3"
+        android:layout_margin="@dimen/textView_layout_margin"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="@dimen/textView_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/player"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="textStart"
+        android:id="@+id/player"
+        android:layout_below="@+id/info"
+        android:layout_alignStart="@+id/tableRow3"
+        android:layout_marginStart="50dp" />
+
+    <TextView
+        android:layout_width="@dimen/textView_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/computer"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="textStart"
+        android:id="@+id/computer"
+        android:layout_below="@+id/player"
+        android:layout_alignStart="@+id/player" />
+
+    <TextView
+        android:layout_width="@dimen/textView_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/tie"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="textStart"
+        android:id="@+id/tie"
+        android:layout_below="@+id/computer"
+        android:layout_alignStart="@+id/computer" />
+
+    <TextView
+        android:layout_width="@dimen/textView_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/points"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="textStart"
+        android:id="@+id/playerCount"
+        android:layout_alignTop="@+id/player"
+        android:layout_alignEnd="@+id/tableRow3" />
+
+    <TextView
+        android:layout_width="@dimen/textView_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/points"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="textStart"
+        android:id="@+id/computerCount"
+        android:layout_below="@+id/playerCount"
+        android:layout_alignStart="@+id/playerCount" />
+
+    <TextView
+        android:layout_width="@dimen/textView_width"
+        android:layout_height="@dimen/textView_height"
+        android:text="@string/points"
+        android:textSize="@dimen/text_height"
+        android:textColor="@color/colorText"
+        android:textAlignment="textStart"
+        android:id="@+id/tieCount"
+        android:layout_below="@+id/computer"
+        android:layout_alignEnd="@+id/computerCount" />
+
+    <Button
+        android:layout_width="@dimen/menu_button_width"
+        android:layout_height="@dimen/menu_button_height"
+        android:text="@string/new_game"
+        android:onClick="onNewGameClicked"
+        android:background="@color/colorStartButton"
+        android:id="@+id/newGame"
+        android:layout_below="@+id/tie"
+        android:layout_alignStart="@+id/tableRow3" />
+
+    <Button
+        android:layout_width="@dimen/menu_button_width"
+        android:layout_height="@dimen/menu_button_height"
+        android:text="@string/exit_game"
+        android:onClick="onExitGameClicked"
+        android:background="@color/colorStartButton"
+        android:id="@+id/exitGame"
+        android:layout_alignTop="@+id/newGame"
+        android:layout_alignEnd="@+id/tableRow3" />
+</RelativeLayout>
