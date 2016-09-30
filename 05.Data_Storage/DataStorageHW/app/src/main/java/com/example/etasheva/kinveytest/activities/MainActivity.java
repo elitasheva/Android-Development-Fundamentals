@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity
         this.mLogin = (Button) this.findViewById(R.id.log);
         this.mGetInfo = (Button) this.findViewById(R.id.get_info);
         this.mShowResult = (Button) this.findViewById(R.id.show_result);
-       this.mInfoView.setText("My data is stored in Kinvey. Please select first \"Login\" button to login in Kinvey. Then select \"Get info\" button to transfer the data from Kinvey to SQLite. And finally select \"Show result\" button to see the result.");
+        this.mInfoView.setText("My data is stored in Kinvey. Please select first \"Login\" button to login in Kinvey. Then select \"Get info\" button to transfer the data from Kinvey to SQLite. And finally select \"Show result\" button to see the result.");
         this.mServiceIntent = new Intent(this, LoadDataService.class);
         this.startService(this.mServiceIntent);
 
@@ -151,9 +151,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void showResultButtonClicked(View view) {
-        ArrayList<LaptopSqlite> result = this.mLoadDataService.showResult();
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-        intent.putExtra("result", result);
         startActivity(intent);
     }
 
