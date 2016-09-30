@@ -58,5 +58,15 @@ public class SecondActivity extends AppCompatActivity {
     };
 
 
+    @Override
+    protected void onDestroy() {
+
+        if (mIsBinded){
+            unbindService(connection);
+        }
+        stopService(this.mServiceIntent);
+        super.onDestroy();
+    }
+
 }
 

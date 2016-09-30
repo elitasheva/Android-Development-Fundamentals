@@ -33,7 +33,7 @@ public class LoadDataService extends IntentService {
     private Client mKinveyClient;
     private IBinder binder;
     private SqliteController mController;
-    private SQLiteDatabase mDatabase;
+
 
     public class LoadDataServiceBinder extends Binder {
         public LoadDataService getService() {
@@ -67,7 +67,7 @@ public class LoadDataService extends IntentService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "Service started", Toast.LENGTH_SHORT).show();
-        mDatabase = this.mController.getWritableDatabase();
+        SQLiteDatabase mDatabase = this.mController.getWritableDatabase();
         this.mController.onCreate(mDatabase);
         return START_STICKY;
     }
